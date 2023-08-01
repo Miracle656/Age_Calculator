@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Age calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: hsl(0, 0%, 86%);
+    }
+
+    .container{
+      width: 480px;
+      height: 370px;
+      border-radius: 20px 20px 150px 20px;
+    padding: 1rem;
+    background-color: hsl(0,0%,100%);
+    }
+
+    .data_info{
+      display: flex;
+    }
+
+    input{
+      width: 10px;
+    }
   </style>
 </head>
+
 <body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="container">
+    <div class="data_info">
+      <label for="day">
+        <p>Day</p>
+        <input name="day" type="text">
+      </label>
+      <label for="month">
+       <p>Month</p>
+        <input name="month" type="text">
+      </label>
+      <label for="year">
+        <p>year</p>
+        <input type="text" name="year">
+      </label>
+    </div>
   </div>
 </body>
+
 </html>
