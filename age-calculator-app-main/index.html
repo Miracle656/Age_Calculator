@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Frontend Mentor | Age calculator app</title>
@@ -13,22 +14,32 @@
       justify-content: center;
       min-height: 100vh;
       background-color: hsl(0, 0%, 86%);
+      font-family: "Poppins";
     }
 
-    .container{
+    .container {
       width: 480px;
       height: 370px;
       border-radius: 20px 20px 150px 20px;
-    padding: 1rem;
-    background-color: hsl(0,0%,100%);
+      padding: 1rem;
+      background-color: hsl(0, 0%, 100%);
     }
 
-    .data_info{
+    .data_info {
       display: flex;
     }
 
-    input{
-      width: 10px;
+    input {
+      width: 100px;
+      margin-right: 10px;
+      margin-top: -1px;
+      padding-left: 15px;
+      font-size: 32px;
+      border-radius: 10px;
+    }
+    p{
+      margin-bottom: 2px;
+      font-weight: 400i;
     }
   </style>
 </head>
@@ -37,16 +48,16 @@
   <div class="container">
     <div class="data_info">
       <label for="day">
-        <p>Day</p>
-        <input name="day" type="text">
+        <p>DAY</p>
+        <input placeholder="DD" name="day" type="text">
       </label>
       <label for="month">
-       <p>Month</p>
-        <input name="month" type="text">
+        <p>MONTH</p>
+        <input placeholder="MM" name="month" type="text">
       </label>
       <label for="year">
-        <p>year</p>
-        <input type="text" name="year">
+        <p>YEAR</p>
+        <input placeholder="YYYY" type="text" name="year">
       </label>
     </div>
   </div>
