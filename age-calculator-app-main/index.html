@@ -45,36 +45,110 @@
         font-weight: 400i;
       }
       .main_info {
-        font-size: 52px;
+        font-size: 62px;
         font-weight: 800;
+        font-style: italic;
       }
       .value {
         color: hsl(259, 100%, 65%);
+      }
+      #button{
+        cursor: pointer;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
+      <div id="button">-></div>
       <div class="data_info">
         <label for="day">
           <p>DAY</p>
-          <input placeholder="DD" name="day" type="text" />
+          <input placeholder="DD" name="day" type="text" id="day_val" />
         </label>
         <label for="month">
           <p>MONTH</p>
-          <input placeholder="MM" name="month" type="text" />
+          <input placeholder="MM" name="month" type="text" id="month_val" />
         </label>
         <label for="year">
           <p>YEAR</p>
-          <input placeholder="YYYY" type="text" name="year" />
+          <input placeholder="YYYY" type="text" name="year" id="year_val" />
         </label>
       </div>
       <div class="main_info">
-        <div class="years"><span class="value">--</span> years</div>
-        <div class="months"><span class="value">--</span> months</div>
-        <div class="days"><span class="value">--</span> days</div>
+        <div class="years" id="year"><span class="value">--</span> years</div>
+        <div class="months" id="month">
+          <span class="value">--</span> months
+        </div>
+        <div class="days" id="day"><span class="value">--</span> days</div>
       </div>
     </div>
+
+    <script>
+      let day_val = document.getElementById("day_val");
+      let month_val = document.getElementById("month_val");
+      let year_val = document.getElementById("year_val");
+
+      let year = document.getElementById("year");
+      let month = document.getElementById("month");
+      let day = document.getElementById("day");
+
+      function calculateAge(birthdate, currentDate) {
+        // Convert string dates to Date objects
+        const birthDateObj = new Date(birthdate);
+        const currentDateObj = currentDate ? new Date(currentDate) : new Date();
+
+        // Calculate the difference in milliseconds
+        const timeDiff = currentDateObj - birthDateObj;
+
+        // Calculate age in years
+        const years = currentDateObj.getFullYear() - birthDateObj.getFullYear();
+
+        // Calculate the month and day difference
+        let months = currentDateObj.getMonth() - birthDateObj.getMonth();
+        let days = currentDateObj.getDate() - birthDateObj.getDate();
+
+        // Adjust for negative month or day differences
+        if (days < 0) {
+          months--;
+          const lastMonth = new Date(
+            currentDateObj.getFullYear(),
+            currentDateObj.getMonth(),
+            0
+          );
+          days += lastMonth.getDate();
+        }
+
+        if (months < 0) {
+          months += 12;
+        }
+
+        return {
+          years: years,
+          months: months,
+          days: days,
+        };
+      }
+
+      // Example usage:
+      const birthdate = `${year}-${month}-${day}`; // YYYY-MM-DD format
+      const currentDate = "2023-11-16"; // Optional: use null for current date
+
+      const age = calculateAge(birthdate, currentDate);
+      
+
+      let button = document.getElementById("button")
+      button.addEventListener('click', ()=>{
+        console.log(
+        "Age:",
+        age.years,
+        "years,",
+        age.months,
+        "months, and",
+        age.days,
+        "days"
+      );
+      })
+    </script>
   </body>
 </html>
