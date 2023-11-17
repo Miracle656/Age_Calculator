@@ -1,66 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Age calculator app</title>
 
-<head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Frontend Mentor | Age calculator app</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: hsl(0, 0%, 86%);
+        font-family: "Poppins";
+      }
 
-  <style>
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      background-color: hsl(0, 0%, 86%);
-      font-family: "Poppins";
-    }
+      .container {
+        width: 480px;
+        height: 370px;
+        border-radius: 20px 20px 150px 20px;
+        padding: 1rem;
+        background-color: hsl(0, 0%, 100%);
+      }
 
-    .container {
-      width: 480px;
-      height: 370px;
-      border-radius: 20px 20px 150px 20px;
-      padding: 1rem;
-      background-color: hsl(0, 0%, 100%);
-    }
+      .data_info {
+        display: flex;
+      }
 
-    .data_info {
-      display: flex;
-    }
+      input {
+        width: 100px;
+        margin-right: 10px;
+        margin-top: -1px;
+        padding-left: 15px;
+        font-size: 32px;
+        border: 1px solid grey;
+        border-radius: 10px;
+      }
+      p {
+        margin-bottom: 2px;
+        font-weight: 400i;
+      }
+      .main_info {
+        font-size: 52px;
+        font-weight: 800;
+      }
+      .value {
+        color: hsl(259, 100%, 65%);
+      }
+    </style>
+  </head>
 
-    input {
-      width: 100px;
-      margin-right: 10px;
-      margin-top: -1px;
-      padding-left: 15px;
-      font-size: 32px;
-      border-radius: 10px;
-    }
-    p{
-      margin-bottom: 2px;
-      font-weight: 400i;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="data_info">
-      <label for="day">
-        <p>DAY</p>
-        <input placeholder="DD" name="day" type="text">
-      </label>
-      <label for="month">
-        <p>MONTH</p>
-        <input placeholder="MM" name="month" type="text">
-      </label>
-      <label for="year">
-        <p>YEAR</p>
-        <input placeholder="YYYY" type="text" name="year">
-      </label>
+  <body>
+    <div class="container">
+      <div class="data_info">
+        <label for="day">
+          <p>DAY</p>
+          <input placeholder="DD" name="day" type="text" />
+        </label>
+        <label for="month">
+          <p>MONTH</p>
+          <input placeholder="MM" name="month" type="text" />
+        </label>
+        <label for="year">
+          <p>YEAR</p>
+          <input placeholder="YYYY" type="text" name="year" />
+        </label>
+      </div>
+      <div class="main_info">
+        <div class="years"><span class="value">--</span> years</div>
+        <div class="months"><span class="value">--</span> months</div>
+        <div class="days"><span class="value">--</span> days</div>
+      </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
